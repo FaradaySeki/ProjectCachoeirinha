@@ -1,0 +1,30 @@
+Necessidade de depois de realizar todas as configurações,
+
+enviar AT&W // salva na NVRAM as configurações do profile atual,
+para quando rolar o reboot não perder as configurações. Pois:
+
+This setting is stored volatile, for use after restart, AT+IFC=1, 1 should be stored to the user
+profile with AT&W.
+
+LINK UTIL:
+https://lastminuteengineers.com/sim800l-gsm-module-arduino-tutorial/
+
+----------- CONFIGURATION COMMANDSSSSS --------------------
+
+AT+IPR = 9600 // seta baud rate fixo em 9600bps
+AT+IPR = 0 // auto baud rate que é o padrão
+AT+CMGF= 1 // Seleciona formato de dado em texto, padrão é PDU 
+protocol data unit
+AT+CNMI=1,2,0,0,0 //ESPECIFICA COMO AS SMSS QUE CHEGAM SERÃO TRATADAS,
+
+
+------------- INFO AND UTIL COMMANDSSSSSSSSS --------------
+
+AT+CSQ // Check Signal Quality 31 excelente ! em dB
+AT+CCID // retorna as informaçoes do chip SIM
+AT+CREG? // retorna se o chip está registrado em alguma rede
+ATI // RETORNA NOME DO MODULO E REVISÃO DA VERSÃO 
+AT+COPS? // RETORNA SE ESTA CONECTADO EM ALGUMA REDE
+
+AT+COPS=? // Return the list of operators present in the network
+AT+CBC // RETORNA NIVEL DE BATERIA , SEGUNDO PARAMETRO % SE ESTA OU NÃO FULL , // TERCEIRO VALOR EM MILIVOLTS
